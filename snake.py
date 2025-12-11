@@ -1,3 +1,4 @@
+
 import random
 import pygame
 
@@ -78,9 +79,11 @@ class Snake(GameObject):
         self.next_direction = None
         self.last = None
 
-        self.direction = random.choice([
-            (GRID_SIZE, 0),
-            (-GRID_SIZE, 0),
-            (0, GRID_SIZE),
-            (0, -GRID_SIZE),
-        ])
+        self.direction = random.choice(
+            [
+                (GRID_SIZE, 0),
+                (-GRID_SIZE, 0),
+                (0, GRID_SIZE),
+                (0, -GRID_SIZE),
+            ]
+        )
