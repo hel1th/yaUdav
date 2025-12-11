@@ -45,7 +45,9 @@ class Snake(GameObject):
         head_x, head_y = self.get_head_position()
         dx, dy = self.direction
 
-        new_head = ((head_x + dx) % SCREEN_WIDTH, (head_y + dy) % SCREEN_HEIGHT)
+        new_head = (
+            (head_x + dx) % SCREEN_WIDTH, (head_y + dy) % SCREEN_HEIGHT
+            )
 
         # столкновение с собой
         if new_head in self.positions[1:]:
