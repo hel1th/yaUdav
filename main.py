@@ -6,11 +6,11 @@ from snake import Snake
 
 
 def handle_keys(snake):
-    """Обработка клавиш."""
+    """Обрабатывает ввод пользователя."""
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
             pygame.quit()
-            quit()
+            raise SystemExit
 
         if event.type == pygame.KEYDOWN:
             if event.key == pygame.K_UP:
@@ -24,17 +24,15 @@ def handle_keys(snake):
 
 
 def main():
-    """Главная функция игры."""
+    """Главный цикл игры."""
     pygame.init()
     screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
-    pygame.display.set_caption("Изгиб Питона")
+    pygame.display.set_caption('Изгиб Питона')
 
     snake = Snake()
     apple = Apple()
-
     clock = pygame.time.Clock()
 
-    # Чистим поле
     screen.fill(BOARD_BACKGROUND_COLOR)
     pygame.display.update()
 
@@ -43,7 +41,6 @@ def main():
         snake.update_direction()
         snake.move()
 
-        # Проверка съела яблоко
         if snake.get_head_position() == apple.position:
             snake.length += 1
             apple.randomize_position()
@@ -55,5 +52,5 @@ def main():
         clock.tick(20)
 
 
-if __name__ == "__main__":
+if __name__ == '__main__':
     main()

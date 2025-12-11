@@ -1,19 +1,25 @@
 import random
+
 import pygame
 
-from constants import GRID_WIDTH, GRID_HEIGHT, GRID_SIZE, APPLE_COLOR
+from constants import (
+    APPLE_COLOR,
+    GRID_HEIGHT,
+    GRID_SIZE,
+    GRID_WIDTH,
+)
 from game_object import GameObject
 
 
 class Apple(GameObject):
-    """Яблоко на игровом поле."""
+    """Яблоко на игровой карте."""
 
     def __init__(self):
         super().__init__(APPLE_COLOR)
         self.randomize_position()
 
     def randomize_position(self):
-        """Устанавливает случайную позицию яблока."""
+        """Выбирает новую случайную позицию."""
         self.position = (
             random.randint(0, GRID_WIDTH - 1) * GRID_SIZE,
             random.randint(0, GRID_HEIGHT - 1) * GRID_SIZE,
