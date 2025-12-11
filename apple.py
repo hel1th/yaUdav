@@ -1,12 +1,7 @@
 import random
 import pygame
 
-from constants import (
-    GRID_WIDTH,
-    GRID_HEIGHT,
-    GRID_SIZE,
-    APPLE_COLOR
-)
+from constants import GRID_WIDTH, GRID_HEIGHT, GRID_SIZE, APPLE_COLOR
 from game_object import GameObject
 
 
@@ -21,7 +16,7 @@ class Apple(GameObject):
         """Устанавливает случайную позицию яблока."""
         self.position = (
             random.randint(0, GRID_WIDTH - 1) * GRID_SIZE,
-            random.randint(0, GRID_HEIGHT - 1) * GRID_SIZE
+            random.randint(0, GRID_HEIGHT - 1) * GRID_SIZE,
         )
 
     def draw(self, surface):
